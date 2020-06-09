@@ -273,7 +273,13 @@ class _ParentWidgetCState extends State<ParentWidgetC> {
   @override
   Widget build(BuildContext context) {
     return new Container(
-        child: new TapboxC(active: _active, onChanged: _handleTapbxcChanged));
+        child: new TapboxC(active: _active, onChanged: _handleTapbxcChanged)
+        // Image.network(
+        //       "http://localhost:9101/public/images/2020/8/6/6bf9def0-61d7-43aa-b7ef-c0b064016943.png",
+        //       width: 100.0,
+        //     ),
+        );
+        // new TapboxC(active: _active, onChanged: _handleTapbxcChanged));
   }
 }
 
