@@ -21,11 +21,12 @@ class MyApp extends StatelessWidget {
           return null;
         });
       },
-      initialRoute: "ParentWidget",
+      initialRoute: "ParentWidgetC",
       routes: {
         "new_route": (context) => NewRoute(),
         "active": (context) => Tapboxa(),
         "ParentWidget": (context) => ParentWidget(),
+        "ParentWidgetC": (context) => ParentWidgetC(),
         "tip_route": (context) =>
             TipRoute(text: ModalRoute.of(context).settings.arguments),
         "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
@@ -240,17 +241,105 @@ class TapboxB extends StatelessWidget {
     return new GestureDetector(
         onTap: _handle,
         child: new Container(
-            child: new Center(
-              child: new Text(
-                active ? 'Active' : 'Inactive',
-                style: new TextStyle(fontSize: 32.0, color: Colors.white),
-              ),),
-            width: 200.0,
-            height: 200.0,
-            decoration: new BoxDecoration(
-              color: active?Colors.lightGreen[300]:Colors.grey[600]
-            ),
-        )
-      );
+          child: new Center(
+            child: new Text(active ? 'Active' : 'Inactive',
+                style: new TextStyle(
+                  fontSize: 32.0,
+                  color: Colors.white,
+                  decoration: TextDecoration.none,
+                )),
+          ),
+          width: 200.0,
+          height: 200.0,
+          decoration: new BoxDecoration(
+              color: active ? Colors.lightGreen[300] : Colors.grey[600]),
+        ));
+  }
+}
+
+class ParentWidgetC extends StatefulWidget {
+  @override
+  _ParentWidgetCState createState() => new _ParentWidgetCState();
+}
+
+class _ParentWidgetCState extends State<ParentWidgetC> {
+  bool _active = false;
+  void _handleTapbxcChanged(bool newValue) {
+    setState(() {
+      _active = newValue;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+        child: new TapboxC(active: _active, onChanged: _handleTapbxcChanged));
+  }
+}
+
+class TapboxC extends StatefulWidget {
+  TapboxC({Key key, this.active: false, @required this.onChanged})
+      : super(key: key);
+  final bool active;
+  final ValueChanged<bool> onChanged;
+
+  @override
+  _TapboxC createState() => new _TapboxC();
+}
+
+class _TapboxC extends State<TapboxC> {
+  bool _highlight = false;
+
+  void _handleTapDown(TapDownDetails details) {
+    print(1);
+    setState(() {
+      _highlight = true;
+    });
+  }
+
+  void _handleTapUp(TapUpDetails details) {
+    print(2);
+    setState(() {
+      _highlight = false;
+    });
+  }
+
+  void _handleCancel() {
+    print(3);
+    setState(() {
+      _highlight = false;
+    });
+  }
+
+  void _handleTap() {
+    print(4);
+    widget.onChanged(!widget.active);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new GestureDetector(
+      onTapDown: _handleTapDown,
+      onTapUp: _handleTapUp,
+      onTapCancel: _handleCancel,
+      onTap: _handleTap,
+      child: new Container(
+        child: new Center(
+          child: Text(widget.active ? "Active" : "Deactive",
+              style: TextStyle(fontSize: 32.0, color: Colors.white,decoration: TextDecoration.none)),
+        ),
+        width: 200.0,
+        height: 200.0,
+        decoration: new BoxDecoration(
+          color: widget.active ? Colors.lightGreen[300] : Colors.blue,
+          border: _highlight
+              ? new Border.all(
+                  color: Colors.teal[700],
+                  width: 10.0,
+                )
+              : null,
+        ),
+      ),
+    );
   }
 }
