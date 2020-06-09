@@ -325,8 +325,21 @@ class _TapboxC extends State<TapboxC> {
       onTap: _handleTap,
       child: new Container(
         child: new Center(
-          child: Text(widget.active ? "Active" : "Deactive",
-              style: TextStyle(fontSize: 32.0, color: Colors.white,decoration: TextDecoration.none)),
+          child: Text.rich(TextSpan(
+            children: [
+              TextSpan(
+                text: "Home: "
+              ),
+              TextSpan(
+                text: "https://flutterchina.club",
+                style: TextStyle(
+                  color: Colors.orange
+                )
+              ),
+              ]
+          ))
+        // Text(widget.active ? "Active" : "Deactive",
+        //       style: TextStyle(fontSize: 32.0, color: Colors.white,decoration: TextDecoration.none)),
         ),
         width: 200.0,
         height: 200.0,
