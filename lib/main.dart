@@ -8,6 +8,7 @@ import 'package:count/widgets/tip_route.dart';
 import 'backup/home.dart';
 import 'widgets/text.dart';
 import 'widgets/textState.dart';
+import 'widgets/request.dart';
 
 void main() {
   runApp(MyApp());
@@ -77,4 +78,12 @@ Map<String, WidgetBuilder> routers = {
   "tip_route": (context) => TipRoute(text: "我是提示啊"),// ModalRoute.of(context).settings.arguments
   "文本框or表单": (context) => TextTest(),
   "有状态文本框or表单": (context) => TextStateTest(),
+  "请求测试": (context) => RequestTest(),
+  "请求测试1": (context) => RequestTest(),
+  "请求测试2": (context) => RequestTest(),
+  "请求测试3": (context) => RequestTest(),
+  "请求测试4": (context) => RequestTest(),
+  "请求测试5": (context) => RequestTest(),
+  "请求测试6": (context) => RequestTest(),
+  "请求测试7": (context) => RequestTest(),
 };
