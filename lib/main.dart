@@ -6,6 +6,8 @@ import 'package:count/widgets/switchOrCheckbox.dart';
 import 'package:count/widgets/tapboxa.dart';
 import 'package:count/widgets/tip_route.dart';
 import 'backup/home.dart';
+import 'widgets/text.dart';
+import 'widgets/textState.dart';
 
 void main() {
   runApp(MyApp());
@@ -67,10 +69,12 @@ class MyHomePage extends StatelessWidget {
 
 Map<String, WidgetBuilder> routers = {
   "home": (context) => HomePage(title: 'home'),
-  "ck": (context) => SwitchAndCheckbox(),
+  "单选开关和复选框": (context) => SwitchAndCheckbox(),
   "new_route": (context) => NewRoute(),
   "active": (context) => Tapboxa(),
   "parentWidget": (context) => ParentWidget(),
   "parentWidgetC": (context) => ParentWidgetC(),
   "tip_route": (context) => TipRoute(text: "我是提示啊"),// ModalRoute.of(context).settings.arguments
+  "文本框or表单": (context) => TextTest(),
+  "有状态文本框or表单": (context) => TextStateTest(),
 };
