@@ -9,6 +9,7 @@ class CenterColumnTest extends StatelessWidget{
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text('txt'),
           Text("world"),
@@ -17,6 +18,4 @@ class CenterColumnTest extends StatelessWidget{
     );
   }
 }
-
-mixin MainAxizAlignment {
-}
+/// 都居中可以使用 Center
