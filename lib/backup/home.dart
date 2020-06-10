@@ -31,9 +31,7 @@ class _MyHomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                'You have click the button this many times:',
-              ),
+              Text('You have click the button this many times:'),
               Text(
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,
@@ -58,7 +56,7 @@ class _MyHomePageState extends State<HomePage> {
           tooltip: 'Increment',
           child: Icon(Icons.add),
         ), // This trailing comma makes auto-formatting nicer for build methods.
-        );
+      );
   }
 }
 
@@ -70,12 +68,12 @@ class RouterTestToute extends StatelessWidget {
         onPressed: () async {
           var result = await Navigator.push(context,
               MaterialPageRoute(builder: (context) {
-            // return Text("hahah");
-            return TipRoute(
-              text: "我是提示啊",
-            );
-          }));
-
+                return TipRoute(
+                  text: "我是提示啊",
+                );
+              }
+            )
+          );
           print('路由返回值: $result');
         },
         child: Text('打开提示页'),

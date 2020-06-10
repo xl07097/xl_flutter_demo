@@ -40,7 +40,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("home page"),
       ),
-           body: Container(
+      body: Container(
         child: ListView.builder(
           itemBuilder: (context, index){
             return InkWell(
@@ -56,9 +56,9 @@ class MyHomePage extends StatelessWidget {
                 )
               ),
             );
-            },
+          },
           itemCount: routers.length,
-          ),
+        ),
       )
     );
   }
@@ -66,7 +66,7 @@ class MyHomePage extends StatelessWidget {
 
 
 Map<String, WidgetBuilder> routers = {
-  "home": (context) => HomePage(),
+  "home": (context) => HomePage(title: 'home'),
   "ck": (context) => SwitchAndCheckbox(),
   "new_route": (context) => NewRoute(),
   "active": (context) => Tapboxa(),
