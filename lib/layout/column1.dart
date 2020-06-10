@@ -16,16 +16,28 @@ class Column3 extends StatelessWidget{
             mainAxisSize: MainAxisSize.max,  //有效，外层Colum高度为整个屏幕
             // mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
-                color: Colors.red,
-                child: Column(
-                   mainAxisSize: MainAxisSize.max,//无效，内层Colum高度为实际高度  
-                   children:[
-                    Text('txt'),
-                    Text("world"),
-                   ]
+              Expanded( // 可以让内层的 column 占满容器
+                child: Container(
+                  color: Colors.red,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,//无效，内层Colum高度为实际高度  
+                    children:[
+                      Text('txt'),
+                      Text("world"),
+                    ]
+                  )
                 )
-              )
+              ),
+              // Container(
+              //   color: Colors.red,
+              //   child: Column(
+              //      mainAxisSize: MainAxisSize.max,//无效，内层Colum高度为实际高度  
+              //      children:[
+              //       Text('txt'),
+              //       Text("world"),
+              //      ]
+              //   )
+              // )
             ],
           ),
         )
@@ -33,4 +45,3 @@ class Column3 extends StatelessWidget{
     );
   }
 }
-/// 都居中可以使用 Center
