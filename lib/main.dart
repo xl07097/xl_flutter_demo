@@ -5,6 +5,7 @@ import 'package:count/widgets/parentWidgetC.dart';
 import 'package:count/widgets/switchOrCheckbox.dart';
 import 'package:count/widgets/tapboxa.dart';
 import 'package:count/widgets/tip_route.dart';
+import 'backup/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -65,7 +66,7 @@ class MyHomePage extends StatelessWidget {
 
 
 Map<String, WidgetBuilder> routers = {
-  // "/": (context) => MyHomePage(),
+  "home": (context) => HomePage(),
   "ck": (context) => SwitchAndCheckbox(),
   "new_route": (context) => NewRoute(),
   "active": (context) => Tapboxa(),

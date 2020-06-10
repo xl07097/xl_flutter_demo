@@ -17,7 +17,7 @@ class _Tapboxa extends State<Tapboxa> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         title: Text('提示'),
       ),
       body: new GestureDetector(

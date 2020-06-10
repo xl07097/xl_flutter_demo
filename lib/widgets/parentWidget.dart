@@ -18,7 +18,7 @@ class _ParentWidgetState extends State<ParentWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(""),
+        title: Text("ParentWidget"),
       ),
       body: new Container(
           child: new _TapboxB(active: _active, onChanged: _handleTapboxState)),
