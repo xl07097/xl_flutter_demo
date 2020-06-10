@@ -13,7 +13,7 @@ import 'layout/column.dart';
 import 'layout/centerColumn.dart';
 import 'layout/column1.dart';
 import 'layout/flex.dart';
-
+import 'layout/flowLayout.dart';
 
 void main() {
   runApp(MyApp());
@@ -88,7 +88,7 @@ Map<String, WidgetBuilder> routers = {
   "布局2": (context) => CenterColumnTest(),
   "布局3": (context) => Column3(),
   "flex布局1": (context) => FlexTest1(),
-  "请求测试5": (context) => RequestTest(),
+  "流式布局": (context) => FlowTest1(),
   "请求测试6": (context) => RequestTest(),
   "请求测试7": (context) => RequestTest(),
 };
