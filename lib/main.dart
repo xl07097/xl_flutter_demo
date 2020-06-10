@@ -9,6 +9,9 @@ import 'backup/home.dart';
 import 'widgets/text.dart';
 import 'widgets/textState.dart';
 import 'widgets/request.dart';
+import 'layout/column.dart';
+import 'layout/centerColumn.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -79,8 +82,8 @@ Map<String, WidgetBuilder> routers = {
   "文本框or表单": (context) => TextTest(),
   "有状态文本框or表单": (context) => TextStateTest(),
   "请求测试": (context) => RequestTest(),
-  "请求测试1": (context) => RequestTest(),
-  "请求测试2": (context) => RequestTest(),
+  "布局1": (context) => ColumnTest(),
+  "布局2": (context) => CenterColumnTest(),
   "请求测试3": (context) => RequestTest(),
   "请求测试4": (context) => RequestTest(),
   "请求测试5": (context) => RequestTest(),
