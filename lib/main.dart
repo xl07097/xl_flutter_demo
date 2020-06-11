@@ -6,6 +6,8 @@ import 'package:count/widgets/switchOrCheckbox.dart';
 import 'package:count/widgets/tapboxa.dart';
 import 'package:count/widgets/tip_route.dart';
 import 'backup/home.dart';
+import 'container/container.dart';
+import 'container/decorate.dart';
 import 'widgets/text.dart';
 import 'widgets/textState.dart';
 import 'widgets/request.dart';
@@ -96,8 +98,8 @@ Map<String, WidgetBuilder> routers = {
   "层叠布局1": (context) => StackTest1(),
   "对齐相对定位": (context) => AlignTest(),
   "容器 padding": (context) => PaddingTest(),
-  "容器1": (context) => StackTest1(),
-  "容器2": (context) => StackTest1(),
+  "容器 装饰decorate": (context) => DecorateTest(),
+  "容器 container": (context) => ContainerTest(),
   "容器3": (context) => StackTest1(),
   "容器4": (context) => StackTest1(),
 };
