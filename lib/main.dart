@@ -8,6 +8,7 @@ import 'package:count/widgets/tip_route.dart';
 import 'backup/home.dart';
 import 'container/container.dart';
 import 'container/decorate.dart';
+import 'container/scaffold.dart';
 import 'widgets/text.dart';
 import 'widgets/textState.dart';
 import 'widgets/request.dart';
@@ -19,6 +20,7 @@ import 'layout/flowLayout.dart';
 import 'layout/stackLayout.dart';
 import 'layout/align.dart';
 import 'container/padding.dart';
+import 'container/MyDrawer.dart';
 
 void main() {
   runApp(MyApp());
@@ -53,6 +55,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("home page"),
       ),
+      drawer: new MyDrawer(),
       body: Container(
         child: ListView.builder(
           itemBuilder: (context, index){
@@ -100,6 +103,6 @@ Map<String, WidgetBuilder> routers = {
   "容器 padding": (context) => PaddingTest(),
   "容器 装饰decorate": (context) => DecorateTest(),
   "容器 container": (context) => ContainerTest(),
-  "容器3": (context) => StackTest1(),
+  "容器 scaffold": (context) => ScaffoldTest(),
   "容器4": (context) => StackTest1(),
 };

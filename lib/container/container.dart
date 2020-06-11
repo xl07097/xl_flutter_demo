@@ -36,7 +36,7 @@ class ContainerTest extends StatelessWidget {
             )
           ]
         ),
-        transform: Matrix4.rotationZ(0.2),
+        transform: Matrix4.rotationZ(0.1),
         alignment: Alignment.center,
         child: Text("5.20", style: TextStyle(color: Colors.white, fontSize: 40.0)),
       )
