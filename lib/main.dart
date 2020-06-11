@@ -1,3 +1,4 @@
+import 'package:count/container/clip.dart';
 import 'package:flutter/material.dart';
 import 'package:count/widgets/new_route.dart';
 import 'package:count/widgets/parentWidget.dart';
@@ -8,6 +9,7 @@ import 'package:count/widgets/tip_route.dart';
 import 'backup/home.dart';
 import 'container/container.dart';
 import 'container/decorate.dart';
+import 'container/floatAction.dart';
 import 'container/scaffold.dart';
 import 'widgets/text.dart';
 import 'widgets/textState.dart';
@@ -104,5 +106,6 @@ Map<String, WidgetBuilder> routers = {
   "容器 装饰decorate": (context) => DecorateTest(),
   "容器 container": (context) => ContainerTest(),
   "容器 scaffold": (context) => ScaffoldTest(),
-  "容器4": (context) => StackTest1(),
+  "底部Tab": (context) => FloatActionTest(),
+  "clip剪切": (context) => ClipTest(),
 };
