@@ -23,7 +23,7 @@ class MyDrawer extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: ClipOval(
                       child: Image.asset(
-                        "imgs/avatar.png",
+                        "static/photo.png",
                         width: 80,
                       ),
                     ),
@@ -38,12 +38,9 @@ class MyDrawer extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0),
-                    child: ListTile(
-                      leading: const Icon(Icons.add),
-                      title: const Text('Add account'),
-                    ),
+                  ListTile(
+                    leading: const Icon(Icons.add),
+                    title: const Text('Add account'),
                   ),
                   ListTile(
                     leading: const Icon(Icons.settings),
