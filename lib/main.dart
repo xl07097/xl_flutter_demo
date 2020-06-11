@@ -14,6 +14,9 @@ import 'layout/centerColumn.dart';
 import 'layout/column1.dart';
 import 'layout/flex.dart';
 import 'layout/flowLayout.dart';
+import 'layout/stackLayout.dart';
+import 'layout/align.dart';
+import 'container/padding.dart';
 
 void main() {
   runApp(MyApp());
@@ -89,6 +92,12 @@ Map<String, WidgetBuilder> routers = {
   "布局3": (context) => Column3(),
   "flex布局1": (context) => FlexTest1(),
   "流式布局": (context) => FlowTest1(),
-  "请求测试6": (context) => RequestTest(),
-  "请求测试7": (context) => RequestTest(),
+  "层叠布局": (context) => StackTest(),
+  "层叠布局1": (context) => StackTest1(),
+  "对齐相对定位": (context) => AlignTest(),
+  "容器 padding": (context) => PaddingTest(),
+  "容器1": (context) => StackTest1(),
+  "容器2": (context) => StackTest1(),
+  "容器3": (context) => StackTest1(),
+  "容器4": (context) => StackTest1(),
 };
