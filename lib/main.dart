@@ -23,6 +23,8 @@ import 'layout/stackLayout.dart';
 import 'layout/align.dart';
 import 'container/padding.dart';
 import 'container/MyDrawer.dart';
+import 'scroll/SingleScroll.dart';
+import 'scroll/CustomScrollView.dart';
 
 void main() {
   runApp(MyApp());
@@ -108,4 +110,6 @@ Map<String, WidgetBuilder> routers = {
   "容器 scaffold": (context) => ScaffoldTest(),
   "底部Tab": (context) => FloatActionTest(),
   "clip剪切": (context) => ClipTest(),
+  "scroll": (context) => SinggleScrollTest(),
+  "sliverscroll": (context) => CustomScrollViewTest(),
 };
