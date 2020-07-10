@@ -25,6 +25,8 @@ import 'container/padding.dart';
 import 'container/MyDrawer.dart';
 import 'scroll/SingleScroll.dart';
 import 'scroll/CustomScrollView.dart';
+import 'functional/WillPopScope.dart';
+import 'functional/StateWidget.dart';
 
 void main() {
   runApp(MyApp());
@@ -112,4 +114,6 @@ Map<String, WidgetBuilder> routers = {
   "clip剪切": (context) => ClipTest(),
   "scroll": (context) => SinggleScrollTest(),
   "sliverscroll": (context) => CustomScrollViewTest(),
+  "阻止退出": (context) => WillPopTest(),
+  "数据共享": (context) => DataWidgetTest(),
 };
