@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class TipRoute extends StatelessWidget {
-  TipRoute({Key key, @required this.text}) : super(key: key);
+  TipRoute({Key key, this.text}) : super(key: key);
   final String text;
 
   @override
