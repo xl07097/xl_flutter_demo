@@ -15,7 +15,7 @@ class RequestTest extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-          FlatButton(
+          TextButton(
             child: Text("请求"),
             onPressed: _handleRequest,
           )

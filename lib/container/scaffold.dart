@@ -41,11 +41,11 @@ class _ScaffoldTest extends State<ScaffoldTest>
       // drawer: new MyDrawer(),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('home')),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.business), title: Text('Business')),
+              icon: Icon(Icons.business), label: 'Business'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.school), title: Text('school'))
+              icon: Icon(Icons.school), label: 'school')
         ],
         currentIndex: _selectIndex,
         fixedColor: Colors.blue,

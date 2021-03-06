@@ -17,7 +17,7 @@ class TipRoute extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(text),
-              RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context, '我是返回值');
                 },

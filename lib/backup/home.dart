@@ -38,9 +38,8 @@ class _MyHomePageState extends State<HomePage> {
               ),
               RondamWord(),
               RouterTestToute(),
-              FlatButton(
+              TextButton(
                 child: Text('open new route'),
-                textColor: Colors.blue,
                 onPressed: () {
                   Navigator.pushNamed(context, 'new_route', arguments: "hi");
                   // Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -64,7 +63,7 @@ class RouterTestToute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: RaisedButton(
+      child: ElevatedButton(
         onPressed: () async {
           var result = await Navigator.push(context,
               MaterialPageRoute(builder: (context) {
