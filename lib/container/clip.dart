@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ClipTest extends StatefulWidget {
+  const ClipTest({super.key});
+
   @override
   _ClipTest createState() => _ClipTest();
 }
@@ -13,7 +15,7 @@ class _ClipTest extends State<ClipTest>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ClipTest"),
+        title: const Text("ClipTest"),
       ),
       body: Center(
         child: Column(
@@ -32,7 +34,7 @@ class _ClipTest extends State<ClipTest>{
                   widthFactor: 0.5,
                   child: avatar
                 ),
-                Text("I am jack")
+                const Text("I am jack")
               ]
             ),
             Row(
@@ -45,7 +47,7 @@ class _ClipTest extends State<ClipTest>{
                     child: avatar,
                   ),
                 ),
-                Text("I am jack")
+                const Text("I am jack")
               ]
             )
           ],

@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 
 class SwitchAndCheckbox extends StatefulWidget {
   @override
-  _SwitchAndCheckBoxTestRouteState createState() =>
-      new _SwitchAndCheckBoxTestRouteState();
+  SwitchAndCheckBoxTestRouteState createState() =>
+      SwitchAndCheckBoxTestRouteState();
 }
 
-class _SwitchAndCheckBoxTestRouteState extends State<SwitchAndCheckbox> {
+class SwitchAndCheckBoxTestRouteState extends State<SwitchAndCheckbox> {
   bool _switchSelected = true; //维护单选开关状态
   bool _checkboxSelected = true; //维护复选框状态
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('switch')
+        title: const Text('switch')
       ),
       body: Column(
         children: <Widget>[
@@ -39,7 +39,7 @@ class _SwitchAndCheckBoxTestRouteState extends State<SwitchAndCheckbox> {
                 activeColor: Colors.red, //选中时的颜色
                 onChanged: (value) {
                   setState(() {
-                    _checkboxSelected = value;
+                    _checkboxSelected = value!;
                   });
                 },
               ),

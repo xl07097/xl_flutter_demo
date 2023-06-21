@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 
 class RequestTest extends StatelessWidget {
+  const RequestTest({super.key});
+
 
   void _handleRequest() async {
-    Map<String,dynamic> map = Map();
+    Map<String,dynamic> map = {};
     map["userId"]= "1";
     Options option =Options();
     option.responseType = ResponseType.json;
@@ -17,14 +19,14 @@ class RequestTest extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('http请求测试'),
-          actions:  [Text("请求数据"),Text("请求数据"),Text("请求数据"),Text("请求数据"),Text("请求数据"),Text("请求数据"),Text("请求数据")]
+        title: const Text('http请求测试'),
+          actions:  const [Text("请求数据"),Text("请求数据"),Text("请求数据"),Text("请求数据"),Text("请求数据"),Text("请求数据"),Text("请求数据")]
       ),
       body: Column(
         children: <Widget>[
           TextButton(
-            child: Text("请求"),
             onPressed: _handleRequest,
+            child: const Text("请求"),
           )
         ],
       ),

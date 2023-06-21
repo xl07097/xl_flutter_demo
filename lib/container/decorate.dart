@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DecorateTest extends StatelessWidget {
+  const DecorateTest({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("填充容器"),
-        actions: <Widget>[
+        title: const Text("填充容器"),
+        actions: const <Widget>[
           UnconstrainedBox(
             child: SizedBox(
               width: 20,
@@ -22,8 +24,8 @@ class DecorateTest extends StatelessWidget {
       body: DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(3.0),
-          gradient: LinearGradient(colors:[Colors.red, Colors.orange[700]] ),
-          boxShadow: [
+          gradient: const LinearGradient(colors:[Colors.red, Colors.orange]),
+          boxShadow: const [
             BoxShadow(
               blurRadius: 4.0,
               color: Colors.black54,
@@ -31,7 +33,7 @@ class DecorateTest extends StatelessWidget {
             ),
           ]
         ),
-        child: Padding(
+        child: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 80.0,vertical:20.0),
           child: Text('Login',style: TextStyle(color:Colors.white),),
         ),

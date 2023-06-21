@@ -2,17 +2,17 @@
 
 
 class TipRoute extends StatelessWidget {
-  TipRoute({Key key, this.text}) : super(key: key);
+  const TipRoute({Key? key, required this.text}) : super(key: key);
   final String text;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('提示'),
+        title: const Text('提示'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Center(
           child: Column(
             children: <Widget>[
@@ -21,7 +21,7 @@ class TipRoute extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context, '我是返回值');
                 },
-                child: Text('返回'),
+                child: const Text('返回'),
               )
             ],
           ),

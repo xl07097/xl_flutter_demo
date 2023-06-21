@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
 class NewRoute extends StatelessWidget {
+  const NewRoute({super.key});
+
   @override
   Widget build(BuildContext context) {
-    var args = ModalRoute.of(context).settings.arguments;
+    var args = ModalRoute.of(context)?.settings.arguments;
     print(args);
-    return new Scaffold(
+
+    return Scaffold(
       appBar: AppBar(
-        title: Text('new route'),
+        title: const Text('new route'),
       ),
-      body: Center(
+      body: const Center(
         child: Text("this is a new route"),
       ),
     );

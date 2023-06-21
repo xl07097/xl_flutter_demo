@@ -1,13 +1,16 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class FloatActionTest extends StatefulWidget {
+  const FloatActionTest({super.key});
+
   @override
   _FloatActionTest createState() => _FloatActionTest();
 }
 
 class _FloatActionTest extends State<FloatActionTest>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  late TabController _tabController;
   List tabs = ['新闻', '历史', '图片'];
 
   @override
@@ -15,7 +18,9 @@ class _FloatActionTest extends State<FloatActionTest>
     super.initState();
     _tabController = TabController(vsync: this, length: tabs.length);
     _tabController.addListener(() {
-      print(_tabController.index);
+      if (kDebugMode) {
+        print(_tabController.index);
+      }
       switch (_tabController.index) {
       }
     });
@@ -25,10 +30,10 @@ class _FloatActionTest extends State<FloatActionTest>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("app bar"),
+        title: const Text("app bar"),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.share),
+            icon: const Icon(Icons.share),
             onPressed: () {},
           )
         ],
@@ -39,21 +44,21 @@ class _FloatActionTest extends State<FloatActionTest>
       // drawer: new MyDrawer(),
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         child: Row(
-          children: [
-            IconButton(icon: Icon(Icons.home), onPressed: () {}),
-            IconButton(icon: Icon(Icons.home), onPressed: () {}),
-            SizedBox(), //中间位置空出
-            IconButton(icon: Icon(Icons.business), onPressed: () {}),
-            IconButton(icon: Icon(Icons.business), onPressed: () {}),
-          ],
           mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(icon: const Icon(Icons.home), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.home), onPressed: () {}),
+            const SizedBox(), //中间位置空出
+            IconButton(icon: const Icon(Icons.business), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.business), onPressed: () {}),
+          ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton:
-          FloatingActionButton(child: Icon(Icons.add), onPressed: _onAdd),
+          FloatingActionButton(onPressed: _onAdd, child: const Icon(Icons.add)),
       body: TabBarView(
         controller: _tabController,
         children: tabs.map((e) {

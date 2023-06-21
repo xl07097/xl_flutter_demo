@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ContainerTest extends StatelessWidget {
+  const ContainerTest({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("容器 container"),
-        actions: <Widget>[
+        title: const Text("容器 container"),
+        actions: const <Widget>[
           UnconstrainedBox(
             child: SizedBox(
               width: 20,
@@ -20,9 +22,9 @@ class ContainerTest extends StatelessWidget {
         ]
       ),
       body: Container(
-        margin: EdgeInsets.only(top: 50.0, left: 120.0),
-        constraints: BoxConstraints.tightFor(width: 200.0,height: 150.0),
-        decoration: BoxDecoration(
+        margin: const EdgeInsets.only(top: 50.0, left: 120.0),
+        constraints: const BoxConstraints.tightFor(width: 200.0,height: 150.0),
+        decoration: const BoxDecoration(
           gradient: RadialGradient(
             colors: [Colors.red, Colors.orange],
             center: Alignment.topLeft,
@@ -38,7 +40,7 @@ class ContainerTest extends StatelessWidget {
         ),
         transform: Matrix4.rotationZ(0.1),
         alignment: Alignment.center,
-        child: Text("5.20", style: TextStyle(color: Colors.white, fontSize: 40.0)),
+        child: const Text("5.20", style: TextStyle(color: Colors.white, fontSize: 40.0)),
       )
     );
   }

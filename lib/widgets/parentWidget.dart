@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ParentWidget extends StatefulWidget {
+  const ParentWidget({super.key});
+
   @override
-  _ParentWidgetState createState() => new _ParentWidgetState();
+  ParentWidgetState createState() => ParentWidgetState();
 }
 
-class _ParentWidgetState extends State<ParentWidget> {
+class ParentWidgetState extends State<ParentWidget> {
   bool _active = false;
 
   void _handleTapboxState(bool newValue) {
@@ -18,16 +20,15 @@ class _ParentWidgetState extends State<ParentWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ParentWidget"),
+        title: const Text("ParentWidget"),
       ),
-      body: new Container(
-          child: new _TapboxB(active: _active, onChanged: _handleTapboxState)),
+      body: Tapbox(active: _active, onChanged: _handleTapboxState),
     );
   }
 }
 
-class _TapboxB extends StatelessWidget {
-  _TapboxB({Key key, this.active: false, this.onChanged})
+class Tapbox extends StatelessWidget {
+  const Tapbox({Key? key, this.active = false, required this.onChanged})
       : super(key: key);
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -35,22 +36,23 @@ class _TapboxB extends StatelessWidget {
     onChanged(!active);
   }
 
+  @override
   Widget build(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
         onTap: _handle,
-        child: new Container(
-          child: new Center(
-            child: new Text(active ? 'Active' : 'Inactive',
-                style: new TextStyle(
+        child: Container(
+          width: 200.0,
+          height: 200.0,
+          decoration: BoxDecoration(
+            color: active ? Colors.lightGreen[300] : Colors.grey[600]
+          ),
+          child: Center(
+            child: Text(active ? 'Active' : 'Inactive',
+                style: const TextStyle(
                   fontSize: 32.0,
                   color: Colors.white,
                   decoration: TextDecoration.none,
                 )),
-          ),
-          width: 200.0,
-          height: 200.0,
-          decoration: new BoxDecoration(
-            color: active ? Colors.lightGreen[300] : Colors.grey[600]
           ),
         )
       );

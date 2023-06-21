@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class TextStateTest extends StatefulWidget {
+  const TextStateTest({super.key});
+
   @override
-  _TextStateTest createState() => _TextStateTest();
+  TextState createState() => TextState();
 }
 
-class _TextStateTest extends State<TextStateTest> {
+class TextState extends State<TextStateTest> {
   String username = '';
   String password = '';
-  TextEditingController _controller = TextEditingController(text: "jack");
+  final TextEditingController _controller = TextEditingController(text: "jack");
   // _controller.text('jack');
   // _controller.text="jack";
   // _controller.selection = TextSelection(
@@ -21,16 +23,16 @@ class _TextStateTest extends State<TextStateTest> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("输入框及表单"),
+          title: const Text("输入框及表单"),
         ),
         body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 10),
           alignment: Alignment.centerLeft,
           child: Column(children: <Widget>[
             TextField(
               controller: _controller,
               autofocus: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: "用户名",
                   hintText: "用户名或邮箱",
                   prefixIcon: Icon(Icons.person)),
@@ -43,7 +45,7 @@ class _TextStateTest extends State<TextStateTest> {
             ),
             TextField(
               autofocus: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: "密码",
                   hintText: "登录密码",
                   prefixIcon: Icon(Icons.lock)),

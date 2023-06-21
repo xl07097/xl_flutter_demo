@@ -1,6 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ScaffoldTest extends StatefulWidget {
+  const ScaffoldTest({super.key});
+
   @override
   _ScaffoldTest createState() => _ScaffoldTest();
 }
@@ -8,16 +11,20 @@ class ScaffoldTest extends StatefulWidget {
 class _ScaffoldTest extends State<ScaffoldTest>
     with SingleTickerProviderStateMixin {
   int _selectIndex = 1;
-  TabController _tabController;
+  late TabController _tabController;
   List tabs = ['新闻', '历史', '图片'];
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(vsync: this, length: tabs.length);
-    print(1);
+    if (kDebugMode) {
+      print(1);
+    }
     _tabController.addListener(() {
-      print(_tabController.index);
+      if (kDebugMode) {
+        print(_tabController.index);
+      }
       switch (_tabController.index) {
       }
     });
@@ -27,10 +34,10 @@ class _ScaffoldTest extends State<ScaffoldTest>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("app bar"),
+        title: const Text("app bar"),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.share),
+            icon: const Icon(Icons.share),
             onPressed: () {},
           )
         ],
@@ -40,7 +47,7 @@ class _ScaffoldTest extends State<ScaffoldTest>
       ),
       // drawer: new MyDrawer(),
       bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.business), label: 'Business'),
@@ -52,7 +59,7 @@ class _ScaffoldTest extends State<ScaffoldTest>
         onTap: _onItemTapped,
       ),
       floatingActionButton:
-          FloatingActionButton(child: Icon(Icons.add), onPressed: _onAdd),
+          FloatingActionButton(onPressed: _onAdd, child: const Icon(Icons.add)),
       body: TabBarView(
         controller: _tabController,
         children: tabs.map((e) {

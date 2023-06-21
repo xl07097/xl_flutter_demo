@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ParentWidgetC extends StatefulWidget {
+  const ParentWidgetC({super.key});
+
   @override
-  _ParentWidgetCState createState() => new _ParentWidgetCState();
+  ParentWidgetCState createState() => ParentWidgetCState();
 }
 
-class _ParentWidgetCState extends State<ParentWidgetC> {
+class ParentWidgetCState extends State<ParentWidgetC> {
   bool _active = false;
   void _handleTapbxcChanged(bool newValue) {
     setState(() {
@@ -21,20 +23,18 @@ class _ParentWidgetCState extends State<ParentWidgetC> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("ParentWidgetC"),
+          title: const Text("ParentWidgetC"),
       ),
-      body: new Container(
-        child: TapboxC(
-          active: _active,
-          onChanged: _handleTapbxcChanged
-        )
+      body: TapboxC(
+        active: _active,
+        onChanged: _handleTapbxcChanged
       )
     );
   }
 }
 
 class TapboxC extends StatefulWidget {
-  TapboxC({Key key, this.active: false, this.onChanged})
+  TapboxC({Key? key, this.active: false, required this.onChanged})
       : super(key: key);
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -74,13 +74,24 @@ class _TapboxC extends State<TapboxC> {
 
   @override
   Widget build(BuildContext context) {
-    return new GestureDetector(
+    return GestureDetector(
       onTapDown: _handleTapDown,
       onTapUp: _handleTapUp,
       onTapCancel: _handleCancel,
       onTap: _handleTap,
-      child: new Container(
-        child: new Center(
+      child: Container(
+        width: 200.0,
+        height: 200.0,
+        decoration: BoxDecoration(
+          color: widget.active ? Colors.lightGreen[300] : Colors.blue,
+          border: _highlight
+              ? Border.all(
+                  color: Colors.teal,
+                  width: 10.0,
+                )
+              : null,
+        ),
+        child: const Center(
           child: Text.rich(
             TextSpan(
               children: [
@@ -94,17 +105,6 @@ class _TapboxC extends State<TapboxC> {
           )
             // Text(widget.active ? "Active" : "Deactive",
             //       style: TextStyle(fontSize: 32.0, color: Colors.white,decoration: TextDecoration.none)),
-        ),
-        width: 200.0,
-        height: 200.0,
-        decoration: new BoxDecoration(
-          color: widget.active ? Colors.lightGreen[300] : Colors.blue,
-          border: _highlight
-              ? new Border.all(
-                  color: Colors.teal[700],
-                  width: 10.0,
-                )
-              : null,
         ),
       ),
     );

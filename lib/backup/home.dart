@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'package:flutter/rendering.dart';
-import 'package:count/widgets/tip_route.dart';
+import 'package:xl_flutter_demo/widgets/tip_route.dart';
+import 'package:xl_flutter_demo/widgets/new_route.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
+  const HomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<HomePage> {
+class MyHomePageState extends State<HomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -31,20 +31,20 @@ class _MyHomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('You have click the button this many times:'),
+              const Text('You have click the button this many times:'),
               Text(
                 '$_counter',
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
-              RondamWord(),
-              RouterTestToute(),
+              RandomWord(),
+              const RouterTest(),
               TextButton(
-                child: Text('open new route'),
+                child: const Text('open new route'),
                 onPressed: () {
                   Navigator.pushNamed(context, 'new_route', arguments: "hi");
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  //   return new NewRoute();
-                  // }));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const NewRoute();
+                  }));
                 },
               )
             ],
@@ -53,13 +53,15 @@ class _MyHomePageState extends State<HomePage> {
         floatingActionButton: FloatingActionButton(
           onPressed: _incrementCounter,
           tooltip: 'Increment',
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ), // This trailing comma makes auto-formatting nicer for build methods.
       );
   }
 }
 
-class RouterTestToute extends StatelessWidget {
+class RouterTest extends StatelessWidget {
+  const RouterTest({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -67,7 +69,7 @@ class RouterTestToute extends StatelessWidget {
         onPressed: () async {
           var result = await Navigator.push(context,
               MaterialPageRoute(builder: (context) {
-                return TipRoute(
+                return const TipRoute(
                   text: "我是提示啊",
                 );
               }
@@ -75,19 +77,21 @@ class RouterTestToute extends StatelessWidget {
           );
           print('路由返回值: $result');
         },
-        child: Text('打开提示页'),
+        child: const Text('打开提示页'),
       ),
     );
   }
 }
 
-class RondamWord extends StatelessWidget {
+class RandomWord extends StatelessWidget {
   final wordPair = WordPair.random();
+
+  RandomWord({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Text(wordPair.toString()),
     );
   }
